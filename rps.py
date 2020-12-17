@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Program to play rock, paper, paper
+# Program to play rock, paper, scissors
 
 from os import system, name 
 from random import randint
@@ -17,6 +17,8 @@ def clear():
         _ = system('clear') 
 
 # Main
+player_won = 0
+computer_won = 0
 while True:
 	# dict to store player choices
 	play = {}
@@ -39,6 +41,16 @@ while True:
 		print("Type 'exit' or 'quit' to leave.")
 		choice = input("Your choice (1/2/3)...  ")
 		if choice == 'exit' or choice == 'quit':
+			print("\nYou Won:", str(player_won))
+			print("I won  :", str(computer_won))
+			if player_won == 0 and computer_won == 0:
+				print("--> No rounds played.")
+			elif player_won > computer_won:
+				print("--> Overall Winner: You")
+			elif player_won == computer_won:
+				print("--> Overall Winner: None (Tie)")
+			else:
+				print("--> Overall Winner: Me")
 			exit()
 		choice = int(choice)
 		if choice == 1:
@@ -68,10 +80,13 @@ while True:
 			res = p - c
 			if res == 1:
 				print("--> You Won.\n\n")
+				player_won += 1
 			else:
 				print("--> You Lost.\n\n")
+				computer_won += 1
 		else:
 			print("--> You Lost.\n\n")
+			computer_won += 1
 
 	# refresh 
 	response = input("Press enter to proceed.")
