@@ -52,14 +52,14 @@ while True:
 			else:
 				print("--> Overall Winner: Me")
 			exit()
-		choice = int(choice)
-		if choice == 1:
+
+		if choice == '1':
 			play['player'] = 'rock'
 			break
-		elif choice == 2:
+		elif choice == '2':
 			play['player'] = 'paper'
 			break
-		elif choice == 3:
+		elif choice == '3':
 			play['player'] = 'scissor'
 			break
 		else: 
@@ -79,6 +79,14 @@ while True:
 		if p > c:
 			res = p - c
 			if res == 1:
+				print("--> You Won.\n\n")
+				player_won += 1
+			else:
+				print("--> You Lost.\n\n")
+				computer_won += 1
+		elif p < c:
+			res = c - p
+			if res != 1:
 				print("--> You Won.\n\n")
 				player_won += 1
 			else:
