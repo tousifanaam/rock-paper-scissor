@@ -44,7 +44,7 @@ while True:
 			print("\nYou Won:", str(player_won))
 			print("I won  :", str(computer_won))
 			if player_won == 0 and computer_won == 0:
-				print("--> No rounds played.")
+				print("--> Overall Winner: None")
 			elif player_won > computer_won:
 				print("--> Overall Winner: You")
 			elif player_won == computer_won:
