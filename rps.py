@@ -92,9 +92,6 @@ while True:
 			else:
 				print("--> You Lost.\n\n")
 				computer_won += 1
-		else:
-			print("--> You Lost.\n\n")
-			computer_won += 1
 
 	# refresh 
 	response = input("Press enter to proceed.")
